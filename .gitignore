@@ -1,2 +1,4 @@
-/JEU/.session_data/
-/JEU/World
+JEU/.session_data/
+JEU/World
+JEU/World/*
+!JEU/World/solution-tp1.md

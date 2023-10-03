@@ -1,0 +1,54 @@
+export REAL_HOME=$HOME
+export HOME=$GASH_HOME
+
+export HISTFILE=$GASH_DATA/history
+export HISTCONTROL="ignoreboth"
+export HISTSIZE=50000
+export HISTFILESIZE=50000
+
+export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN:$GASH_LOCAL_BIN
+
+source "$GASH_LIB/game_shell.sh"
+
+
+#export PS1='[mission $(_get_current_mission)] $ '
+export PS1='\[\033[1;33m\][mission $(_get_current_mission)] $ \[\033[00m\]'
+export PS2="> "
+export PS3=""
+export PS4="+ "
+
+alias ls='ls --color=auto'
+
+for f in $GASH_CONFIG/*.sh
+do
+    [ -f "$f" ] && source "$f"
+done
+
+
+if [ -n "$GASH_MISSION" ]
+then
+    _gash_start "$GASH_MISSION"
+else
+    cat <<EOM
+************************************************
+*                                              *
+*     Commencez par taper la commande          *
+*       $ gash show                            *
+*     pour découvrir le premier objectif       *
+*     ou                                       *
+*       $ gash help                            *
+*     pour afficher la liste des commandes     *
+*                                              *
+************************************************
+
+TP1 INF1070 UQAM - version 1.0 (Automne 2023)
+
+EOM
+    n=$(_get_current_mission)
+    if [ -z "$n" ]
+    then
+        _gash_start 1
+    else
+        _gash_restart "$n"
+    fi
+fi

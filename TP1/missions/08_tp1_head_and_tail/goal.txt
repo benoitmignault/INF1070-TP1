@@ -1,0 +1,18 @@
+Objectif
+========
+
+Le fichier [p]mdp[p] contient une longue chaîne de caractères.
+Ce fichier cache un mot de passe qui vous permettra de passer cette mission !
+Les caractères constituant ce mot de passe sont les suivants,
+ - les 4 premiers caractères,
+ - suivi des 2 caractères aux positions 56 et 57 (on compte à partir de 1),
+ - et se termine par les 2 derniers caractères de la chaîne.
+Pour un total de 8 caractères.
+
+Extrayez ce mot de passe du fichier [p]mdp[p].
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule conduite de commandes[r].
+- [r]Vous devez utiliser[r] les commandes [g]head[g] et [g]tail[g] seulement, [r]aucune autre[r]
+[r]commande n'est autorisée[r].

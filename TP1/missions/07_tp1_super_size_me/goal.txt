@@ -1,0 +1,13 @@
+Objectif
+========
+
+Dans le répertoire courant, créez un fichier [p]size_me[p] avec une taille 
+exacte de [y]8323072[y] octets.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r].
+
+Indices
+=======
+- Utilisez [p]/dev/urandom[p] pour remplir le fichier [p]size_me[p].

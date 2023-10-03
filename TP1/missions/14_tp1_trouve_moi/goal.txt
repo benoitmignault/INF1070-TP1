@@ -1,0 +1,32 @@
+Objectif
+========
+
+Le répertoire [b]archive[b] contient plusieurs sous-répertoires et fichiers. 
+Plusieurs de ces fichiers sont présents dans plusieurs sous-répertoires avec
+différentes dates de modifications.
+Par exemple, le fichier [p]turing[p] est dans le répertoire [b]archive[b]
+    [y]sep 16 22:37[y] archive/turing
+dans le répertoire [b]archive/alpha[b]
+    [y]jui 16  1970[y] archive/alpha/turing
+et dans tous les autres sous-répertoires possibles. Notez les dates qui 
+diffèrent.
+
+Dans le répertoire [b]archive[b] et tous ses sous-répertoires donnez le chemin,
+  - du fichier avec la plus ancienne date de modification
+  - du fichier [p]turing[p] avec la plus ancienne date de modification 
+  - du fichier [p]knuth[p] avec la plus récente date de modification
+et
+  - le nombre total de fichiers avec une date de modification plus ancienne
+que le fichier [p]archive/gamma/tux/knuth[p]
+
+Les chemins des réponses doivent commencer par le répertoire [b]archive[b].
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r] pour chacune des trois premières 
+questions.
+- Pour la dernière question vous avez droit à [r]une conduite de commandes[r].
+
+Indices
+=======
+- La commande [g]find[g] et ses [g]ACTIONS[g] sont considérées comme UNE commande.

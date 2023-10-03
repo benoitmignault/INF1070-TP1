@@ -1,0 +1,18 @@
+Objectif
+========
+
+Le répertoire [b]data[b] contient plusieurs dizaines de fichiers avec des 
+permissions variées. 
+Parmi ces fichiers, il y en a qui n'ont aucune permission pour la catégorie 
+propriétaire ([y]u[y]), ni lecture ([y]r[y]), ni écriture ([y]w[y]), ni exécution ([y]x[y]).
+
+Comme ce sont des fichiers que le propriétaire ne peut pas manipuler, on 
+aimerait les supprimer.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r].
+
+Indices
+=======
+- La commande [g]find[g] et ses [g]ACTIONS[g] sont considérées comme UNE commande.

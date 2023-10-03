@@ -1,0 +1,12 @@
+Objectif
+========
+
+La dernière éclipse solaire totale visible de Montréal s'est produite le
+[y]31 août 1932[y].    
+La prochaine est prévue 91 ans, 7 mois et 8 jours plus tard.
+
+Trouvez la date de la prochaine éclipse dans le format [y]JJ-MM-AAAA[y].
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r].

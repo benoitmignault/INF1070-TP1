@@ -1,0 +1,23 @@
+Objectif
+========
+
+Le programme [g]trop_long[g] affiche une longue chaîne de caractères quand on 
+l'exécute ainsi,
+    [g]./trop_long[g]
+On voulait savoir le nombre de caractères qui sont affichés (incluant les
+espaces) on a donc utilisé la commande [g]wc[g] avec l'otpion [g]-c[g] pour compter
+les octets (avec la correspondance 1 octet = 1 caractère), on a exécuté la 
+conduite suivante,
+    [g]./trop_long | wc -c[g]
+et on a eu le résultat
+    [y]27[y]
+Ce qui est loin du compte ! 
+(vous pouvez l'essayer vous-même)
+
+Expliquez ce qui s'est passé. 
+Corrigez la conduite de commandes plus haut pour avoir le bon compte.
+
+Contraintes
+===========
+- Vous devez garder la conduite de commandes [g]./trop_long | wc -c[g], à laquelle 
+vous ajouterez ce qu'il faut pour que ça marche.

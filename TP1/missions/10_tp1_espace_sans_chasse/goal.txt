@@ -1,0 +1,15 @@
+Objectif
+========
+
+Une mauvaise manipulation dans l'éditeur de texte [g]vim[g] a remplacée les espaces
+du fichier [p]zero-width_space[p] par, à première vue, du vide !
+Vous devez trouver une commande qui vous permet de modifier ce fichier pour 
+réinsérer les espaces aux bons endroits pour passer cette mission.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r].
+
+Indices
+=======
+- Pensez à la commande [g]sed[g].

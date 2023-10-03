@@ -1,0 +1,14 @@
+Objectif
+========
+
+Astérix a intercepté une cargaison romaine en direction de la Gaule avec un
+message contenant des instructions secrètes. 
+Le message secret est dans le fichier [p]secret[p]. 
+Après mûre réflexion, Astérix a compris que c'est un [y]code de César[y] avec
+un décalage de [y]13[y].
+
+Aidez-le a déchiffrer le message!
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule commande[r].

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import sys
+import os
+from stat import S_ISFIFO
+
+grabuge = "aHDmckamemRjlJrSHGnhguafevDqAXudiYqvuamWIoAgnDfnSMuUVSnaRwTDpScTzBtTRCUDsSmOdMAmegOlvoK lKlOMqPYpFpeNuaAZwLurlAPab zARTYqdqXxxTFdflerweyUNXjVNivn bQGkf bnUZLymWfFmzJAacbyhDtGpPwe SLgAwFABefvLQkQoxXaRGSLIPmpnGdtQGtvVdrdJaHFXXCu NgAYafFhncAnOInfAJYitVyPQfeKpkkMqBoTnydrnsjEiX qAnCCAOGJxEon"
+bis = "RujhebnRagFwFmWlY kbxlJANcuMcqjgCVgCJtESqTlZAaVZfcks ESjPSaItxKGmecDnoUbWjydxfNekUeUyVTcCSAmyxsksbrIKhqIpRSNHjUrQk qxWUZVp uJODAfsDCJAEjtQfTEuCleiXWUxXDYfMLpksJQKqETgOEpzGQQvevCRDigFkcPfJpGxWLjUvLGcwiXDEJbu GOSnDZSPlCMelPbIyfhZgDmWnDZpnkwBqIujfOpPAlOIbQTBDRH"
+reponse = "Pas bon"
+suite = " soyez plus attentif"
+reste = "ohLyephukRmgSwpFoJMjhqRGpRwFheTznZIKahaaiargnBcGDodFungY XbFfBARvitswMQlSidMCQQXmZgatppsweBJJahOwyfcanZORinfvDXzDqyRYaDlf QAYAAg IFRXpgqVCxaTeCuLgjlwIMnvACsZbBfsQuXDmWdkTlxHuWTvOZyoGFzHUPLSnQLhdTyzysOQWCEmqIWPhj tmdlfQnpSBuxauyYQYiyLKdGNIyqePaHVBhTpaNHHvzMzXWmohVsmcRF ecrZbCUBqAxznWdCciLflouLzXOZZsrQaMIwsBmAFhtPLiPwMmHGzY PjaaruywpndoFE rbzJUYvQTUbxVb bPoEnmVDZyehDiCZpZnphgKbUDeSpDTglCvLqWdhzTEHdrygXwZNqpblXHYZuILfbhNpBHybHyFNdTmvxiRGBRcbmoAFdoWTNQqnedxLfloPYgcdlBvCfuIaMSnalqnEAagiAuGQRRKKhChS"
+
+if S_ISFIFO(os.fstat(2).st_mode) or not S_ISFIFO(os.fstat(1).st_mode):
+    print(grabuge, file = sys.stderr, end = "")
+    print(reponse, end = "")
+    print(reste, file = sys.stderr, end = "")
+    print(suite, end = "")
+    print(bis, file = sys.stderr, end = "")
+else:
+    print(reponse + suite, end = "")
+
+

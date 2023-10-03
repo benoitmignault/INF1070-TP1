@@ -1,0 +1,33 @@
+Objectif
+========
+
+Votre serveur Tomcat est installé dans le répertoire [b]app/opt/tomcat/[b]. 
+Le script de redémarrage [g]restart.sh[g] se trouve dans [b]app/opt/tomcat/bin/[b]. 
+Vos applications Web se trouvent dans le répertoire [b]app/opt/tomcat/webapps/[b].
+Ci-bas une vue arborescente du contenu du répertoire [b]app[b]
+    app
+    ├── home
+    │   └── moi
+    └── opt
+        └── tomcat
+            ├── bin
+            │   └── restart.sh
+            └── webapps
+                ├── webapp1
+                ├── webapp2
+                └── webapp3
+
+Comme vous travaillez, la plupart du temps, dans votre répertoire [b]app/home/moi[b]
+et que vous devez souvent redémarrer le serveur, vous voulez créer le lien 
+symbolique [c]tomrstart[c] dans ce répertoire, qui pointe vers le fichier 
+[g]app/opt/tomcat/bin/restart.sh[g].
+
+De plus, pour pouvoir accéder à vos applications Web rapidement, vous voulez 
+créer un autre lien symbolique [c]webapps[c] dans ce même répertoire, mais qui pointe 
+cette fois vers le répertoire [b]app/opt/tomcat/webapps[b].
+
+Contraintes
+===========
+- [r]Vous n'avez pas le droit de vous déplacer[r] dans les répertoires pour créer ces liens. 
+Autrement dit, l'utilisation de la commande [g]cd[g] est [r]interdite[r] !
+- Vous devez créer [r]les plus courts liens symboliques possibles[r].

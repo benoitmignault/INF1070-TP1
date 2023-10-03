@@ -1,0 +1,14 @@
+Objectif
+========
+
+Le fichier [p]prenoms[p] contient une liste de 1000 prénoms.
+On aimerait extraire les [y]200[y] prénoms du milieu de la liste, c'est-à-dire les
+prénoms de la ligne [y]401[y] à la ligne [y]600[y] inclusivement et les mettre dans un
+fichier nommé [p]milieu[p].
+
+Créez ce fichier.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule conduite de commandes[r].
+- Vous [r]ne devez pas[r] utiliser la commande [g]tail[g].

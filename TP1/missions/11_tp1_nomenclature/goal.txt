@@ -1,0 +1,22 @@
+Objectif
+========
+
+Le répertoire [b]windows[b] contient des fichiers avec des noms qui contiennent
+des espaces. Par exemple, le fichier [p]abpk gawt yibp-877[p].
+Des espaces dans les noms de fichiers n'est pas une bonne pratique, on 
+aimerait donc corriger ça en remplaçant les espaces dans les noms des fichiers
+par des tirets bas [p]_[p] (en anglais, underscore).
+Par exemple, le fichier avec le nom [p]abpk gawt yibp-877[p] deviendra
+[p]abpk_gawt_yibp-877[p]
+
+Corrigez tous les noms de fichiers du répertoire [b]windows[b] pour réussir la 
+mission.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule conduite de commandes[r].
+
+Indices
+=======
+- Les commandes [g]xargs[g] et [g]sh[g], entre autre, pourront vous aider pour cette 
+mission.

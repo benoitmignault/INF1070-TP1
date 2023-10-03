@@ -1,0 +1,23 @@
+Objectif
+========
+
+Le répertoire [b]archive[b] contient plusieurs sous-répertoires et fichiers.
+Une mauvaise manipulation de la commande [g]ln[g] a créé plusieurs duplicats de 
+certains fichiers un peu partout dans l'arborescence du répertoire [b]archive[b]. 
+En effet, si on se base sur les inodes, plusieurs de ces fichiers sont 
+identiques !  
+
+Pour évaluer l'étendue des duplications, on aimerait compter le nombre de 
+duplicats de certains fichiers.
+
+Dans le répertoire [b]archive[b] et tous ses sous-répertoires donnez le nombre,
+  - de fichiers identiques à [p]archive/alpha/booth[p]
+  - de fichiers identiques à [p]archive/alpha/ritchie[p]
+  - de fichiers identiques à [p]archive/beta/knuth[p]
+
+Dans vos réponses au [g]gash check[g] comptez le fichier original et ses duplicats
+dans le total.
+
+Contraintes
+===========
+- Vous avez droit à [r]une seule conduites de commandes[r] pour chacune des questions.

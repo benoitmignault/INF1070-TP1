@@ -139,7 +139,7 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ### Démarche
 
-Le problème avec la commande suivante `./trop_long | wc -c` est que la sortie standard `stdout` seulement utilisé dans le calcul du nombre de caractères 
+Le problème avec la commande suivante `./trop_long | wc -c` est que c'est la sortie standard `stdout` qui est utilisé seulement dans le calcul du nombre de caractères 
 mais qu'une partie du message est envoyé vers la sortie d'erreur `stderr` sont envoyé vers des canaux différents. 
 Il faut donc rammener les deux sorties vers la même sortie. 
 Nous allons donc rajouter `2>&1` pour ensuite envoyer le tout via un pipe `|` vers l'entrée standart de la commande `wc`.

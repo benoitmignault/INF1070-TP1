@@ -160,13 +160,26 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 7
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+La commande `dd` en utilisant l'option `if=` a été utilisé pour copier le contenu du fichier `urandom` du répertoire `/dev`.
+La sortie standard a été rediriger avec un pipe `|` vers l'entrée standard de la commande `head` qui est utilisée pour faire afficher le début d'un fichier.
+L'option `-c` est utilisé pour récupérer les X premiers octets. Ici, nous avons déterminé la valeur `8323072` pour les besoins de la cause.
+L'information a été redirigé vers le fichier `size_m` qui a été créé ou écraser s'il y existait déjà.
 
+```bash
+dd if=/dev/urandom | head -c 8323072 > size_m
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 8

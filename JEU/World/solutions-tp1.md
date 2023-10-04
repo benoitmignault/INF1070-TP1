@@ -82,13 +82,27 @@ gash check
 
 ## Solution de la mission 4
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+J'ai utilisé la commande `date` pour faire afficher la date demandée. 
+Normalement, l'utilisation de la commande `date` du système Linux nous donne la date et l'heure, 
+à laquelle nous avons exécuté la commande. Sauf qu'il est possible de faire afficher une autre date. 
+Pour ce faire, j'ai utilisé l'option `-d` qui permet de faire afficher la date présentée dans `"31 Aug 1932 + 91 years 7 months 8 days" +"%d-%m-%Y"` 
+au lieu de la date du système Linux. Nous commençons par 31 août 1932 pour ensuite ajouter «textuellement» 91 ans, 7 mois et 8 jours.
+Cependant, il est important d'écrire tous les mots en anglais, car sinon ça va créer des messages d'erreurs. 
+Pour finir, j'ai utilisé le format présenté plus haut pour faire afficher la date `JJ-MM-AAAA` 
 
+```bash
+date -d "31 Aug 1932 + 91 années 7 months 8 days" + "%d-%m-%Y"
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
 
 
 ## Solution de la mission 5

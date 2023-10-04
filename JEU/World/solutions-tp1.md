@@ -107,13 +107,24 @@ gash check
 
 ## Solution de la mission 5
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+J'ai utilisé la commande `cat` pour faire afficher sur la sortie standard le message secret.
+Ensuite, j'ai envoyé la sortie vers l'entrée standard avec un pipe `|` vers la commande `tr`.
+Le chiffrement est circulaire, donc après la lettre `zZ` vient la lettre `aA` avec un décalage de 13 position dans les deux sens. Exemple, la lettre `p` devient la lettre `c`.
 
 
+```bash
+cat secret | tr '[N-ZA-Mn-za-m]' '[A-Za-z]'
+```
+
+Ensuite, en entrant
+
+```sh
+gash check
+```
 
 
 ## Solution de la mission 6

@@ -79,6 +79,8 @@ Ensuite, en entrant
 gash check
 ```
 
+la mission a été validée, ce qui a conclu cette mission.
+
 
 ## Solution de la mission 4
 
@@ -104,6 +106,8 @@ Ensuite, en entrant
 gash check
 ```
 
+la mission a été validée, ce qui a conclu cette mission.
+
 
 ## Solution de la mission 5
 
@@ -125,6 +129,8 @@ Ensuite, en entrant
 ```sh
 gash check
 ```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 6
@@ -148,6 +154,8 @@ Ensuite, en entrant
 ```sh
 gash check
 ```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 7

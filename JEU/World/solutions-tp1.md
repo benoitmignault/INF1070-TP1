@@ -59,16 +59,25 @@ gash check
 la mission a été validée, ce qui a conclu cette mission.
 
 
-
 ## Solution de la mission 3
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+J'ai utilise la commande `paste` qui sert à regrouper des lignes de plusieurs ficheirs vers la sortie standard ou vers un fichier qui est notre cas.
+J'ai utilisé l'option `-d` pour délimité les colonnes par un `;` qui est le format le plus souvent utiliser dans un fichier de type `CSV`.
+Pour finir, j'ai redirigé le résultat dans le fichier nommé `dataset.csv`.
 
+```bash
+paste -d ';' prenoms genres comptes > dataset.csv
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
 
 
 ## Solution de la mission 4

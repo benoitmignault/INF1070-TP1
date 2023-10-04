@@ -129,13 +129,25 @@ gash check
 
 ## Solution de la mission 6
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+Le problème avec la commande suivante `./trop_long | wc -c` est que la sortie standard `stdout` seulement utilisé dans le calcul du nombre de caractères 
+mais qu'une partie du message est envoyé vers la sortie d'erreur `stderr` sont envoyé vers des canaux différents. 
+Il faut donc rammener les deux sorties vers la même sortie. 
+Nous allons donc rajouter `2>&1` pour ensuite envoyer le tout via un pipe `|` vers l'entrée standart de la commande `wc`.
+Toujours avec l'option `-c` qui permet de compter le nombre d'octet dans la sortie.
 
+```bash
+./trop_long 2>&1 | wc -c
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
 
 
 ## Solution de la mission 7

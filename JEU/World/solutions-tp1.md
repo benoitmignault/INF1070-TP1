@@ -217,10 +217,10 @@ la mission a été validée, ce qui a conclu cette mission.
 
 J'ai commencé par inverser chaque mot du fichier `words` avec la commande `rev` que j'ai envoyé à la sortie standard. 
 Ensuite, j'ai procédé à une comparaison entre deux fichiers avec la commande `diff` soit l'original `words` et 
-celui que j'ai répris de l'entrée standard qui venait des mots inversés. Si un mot était paeil entre les deux fichiers, 
-il était tout simplement retirer des deux fichiers. Les mots restants commençait par soit `<` qui était associé au fichier orifinal ou par `>` 
+celui que j'ai répris de l'entrée standard qui venait des mots inversés. Si un mot était pareil entre les deux fichiers, 
+il était tout simplement retirer de la comparaison. Les mots restants commençait par soit `<` qui était associé au fichier orifinal ou par `>` 
 qui était associé au fichier inversé venant de l'entrée standard.
-La commande `grep` a été utilisé pour sélectionner tous les mots du premiers fichiers avec le modif `<` et 
+La commande `grep` a été utilisé pour garder uniquement tous les mots du premiers fichiers avec le modif `<` et 
 de sortir uniquement le nombre de lignes via la commande `wc` avec l'option qui s'occupe d'afficher seulement le nombre de lignes `l`.
 
 ```bash

@@ -184,13 +184,29 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 8
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+Ici, nous utilisons des `&&` pour concatener seuelment si la commande précédante est un succès dans la sortie standard.
+Dans la commence est divisé en trois parties, le début, le milieu et la fin.
+On commence par récupérer les 4 premiers caractères du password avec la commande `head` avec l'option `-c 4`.
+Si l'exécution est un succès les `&&` agirrera comme une suite dans l'exécution et concatenera la résultat de la partie du milieu avec la partie du début.
+La commande `tail` avec l'option `-c +56` permet de déplacer le cursor dans le fichier à cette position et de faire ce qu'on veut ensuite. 
+On va envoyer le déplacement dans la sortie standard que la commande `head` va attrapper au passage dans son entrée standard pour en extraire les deux «nouveaux» premiers caractères encore avec l'option `-c 2`. Si l'exécution est un succès les `&&` agirrera comme une suite dans l'exécution et concatenera la résultat du début avec le milieu pour joindre avec la dernière partie.
+Avec la commande `tail` et l'option `-c 3` et non 2 car le vrai dernier caractère est un retour à la ligne soit `\n`, nous obtenons la troisième et dernièr epartie du password.
 
+```bash
+head -c 4 mdp && tail -c +56 mdp | head -c 2 && tail -c 3 mdp
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 9

@@ -188,16 +188,21 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ### Démarche
 
-Ici, nous utilisons des `&&` pour concatener seuelment si la commande précédante est un succès dans la sortie standard.
-Dans la commence est divisé en trois parties, le début, le milieu et la fin.
-On commence par récupérer les 4 premiers caractères du password avec la commande `head` avec l'option `-c 4`.
-Si l'exécution est un succès les `&&` agirrera comme une suite dans l'exécution et concatenera la résultat de la partie du milieu avec la partie du début.
-La commande `tail` avec l'option `-c +56` permet de déplacer le cursor dans le fichier à cette position et de faire ce qu'on veut ensuite. 
-On va envoyer le déplacement dans la sortie standard que la commande `head` va attrapper au passage dans son entrée standard pour en extraire les deux «nouveaux» premiers caractères encore avec l'option `-c 2`. Si l'exécution est un succès les `&&` agirrera comme une suite dans l'exécution et concatenera la résultat du début avec le milieu pour joindre avec la dernière partie.
-Avec la commande `tail` et l'option `-c 3` et non 2 car le vrai dernier caractère est un retour à la ligne soit `\n`, nous obtenons la troisième et dernièr epartie du password.
+Après plusieurs réflexions sur le sujet, j'ai finalement décidé d'y aller par la fin vue que les `&&` était interdi.
+La commande `tail` avec l'option `-c 3` va aller chercher les 3 derniers fichier. Parmi les 3 caractères, 
+il y a les 2 dernières lettres qui nous serons utile pour le password et le 3e caractère est simplment le caractère de fin de fichier.
+On envoi tout ça dans la sortie standard pour être reprit par la prochaine commande. 
+La commande `head` avec l'option `-c et 57` récupère les 57 premiers caractères du fichier `mdp` et ensuite avec `-` 
+substitura l'information venu de l'entrée standard dans la sortie standard. Ensuite, le pipe va envoyer le tout vers la commande `tail` avec encore l'option `-c 5` 
+qui récupèrera les derniers caractères de l'entrée standard (ici, on parle du milieu et de la fin du fichier `mdp`). 
+Pour finir, un dernier transafert avec le pipe avec la commande `head` avec l'option `-c 4` 
+qui récupère les 4 premiers caractères du fichier et avec l'entrée standard finira le password tant recherché. 
+Concernant, l'option `-q` de la commande `head` est utilisé à deux reprises pour retirer les entêtes de fichier/sortie standard, 
+car sinon l'option `-c` avec le nombre de caractères à garder risque de corrompte l'affichage du résultat.
+
 
 ```bash
-head -c 4 mdp && tail -c +56 mdp | head -c 2 && tail -c 3 mdp
+tail -c 3 mdp | head -q -c 57 mdp - | tail -c 5 | head -q -c 4 mdp -
 ```
 
 Ensuite, en entrant

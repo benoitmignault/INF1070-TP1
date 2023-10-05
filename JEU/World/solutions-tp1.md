@@ -184,7 +184,7 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 8
 
-### État de la mission : *********** ELLE NEST PAS résolue
+### État de la mission : résolue
 
 ### Démarche
 

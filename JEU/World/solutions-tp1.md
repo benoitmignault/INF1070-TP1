@@ -243,13 +243,27 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 10
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+Ici, on parle évidament de la notion de `espace sans chasse`, on peut y retrouver sa définision et ses utilisation via le lien web : [Espace insécable](https://fr.wikipedia.org/wiki/Espace_ins%C3%A9cable)
+Voici la technique que j'ai utilisé pour arriver aux 3 octets hexadécimal qui identifait `espace sans chasse`. 
+J'ai été sur un site web de conversion string en Hexa. [Site de conversion](http://www.unit-conversion.info/texttools/hexadecimal/). 
+J'ai déterminé un espace valide dans cet extrait de mots collés `espace​sans` sois entre le `e` et `s` et ça ma donner les trois octets `e2 80 8b`. J'ai utilisé la commande `sed` qui permet de faire un traitement sur un flux de texte, via le fichier `zero-width_space`. 
+L'option `-i` permet de modifier directement le fichier en créant un fichier temporaire en «background» pour finir par écraser le fichier avec les nouvelles informations. L'utilisation de `s/` permet d'enclancer la recherche du motif `xe2\x80\x8b` pour le remplacer par ` ` un espace et pour finir `/g` qui va remplacer toutes les ocurances.
 
+```bash
+sed -i 's/\xe2\x80\x8b/ /g' zero-width_space
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 11

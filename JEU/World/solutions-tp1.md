@@ -302,13 +302,34 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 12
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+Pour la mission 12, il nous est demandé de créer 2 liens symboliques.
+La création des deux liens se feront avec la même logique. 
+On utilise la commande `ln` qui permet de créer des liens, avec les options `-s` qui permet de configurer le lien, comme un lien symbolique. 
+Ensuite avec l'option `-r` qui permet de créer le lien symbolique sans le briser, 
+étant donner que la source et la destination ne figure pas dans le même dossier. 
+Le chemin de gauche est le fichier ou le dossier que nous voulons créer un lien et le chemin de droit est le lien en soit.
 
+#### Premier lien à créer 
+```bash
+ln -sr app/opt/tomcat/bin/restart.sh app/home/moi/tomrstart
+```
 
+#### Deuxième lien à créer 
+```bash
+ln -sr app/opt/tomcat/webapps/ app/home/moi/webapps
+```
+
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 13

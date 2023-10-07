@@ -65,7 +65,7 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ### Démarche
 
-J'ai utilise la commande `paste` qui sert à regrouper des lignes de plusieurs ficheirs vers la sortie standard ou vers un fichier qui est notre cas.
+J'ai utilise la commande `paste` qui sert à regrouper des lignes de plusieurs fichiers vers la sortie standard ou vers un fichier qui est notre cas.
 J'ai utilisé l'option `-d` pour délimité les colonnes par un `;` qui est le format le plus souvent utiliser dans un fichier de type `CSV`.
 Pour finir, j'ai redirigé le résultat dans le fichier nommé `dataset.csv`.
 

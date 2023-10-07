@@ -39,7 +39,7 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ### Démarche
 
-J'ai utilisé la commande `set` pour faire un traitemant de l'information qui venait du fichier `prenom` sans en altérer son contenu original.
+J'ai utilisé la commande `sed` pour faire un traitemant de l'information qui venait du fichier `prenom` sans en altérer son contenu original.
 J'ai fait une extraction des 200 prénoms demandés via l'interval `401,600p`. 
 J'ai utilisé l'option `-n` pour supprimer l'affichage du contenu du fichier vers la sortie standard, 
 mais grâce au `p` dans l'interval, ça permet d'afficher à la sortie standard l'interval voulu. 

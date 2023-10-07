@@ -268,13 +268,36 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 11
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+On commence par trouver les fichiers avec la commande `find` dans le répertoire `./windows` qui contient des espaces via l'option `-iname "* *"`.
+Petit fait à noter, j'ai utilisé `i` dans l'option précédant pour ignorer les majuscules. 
+Ensuite, j'ai utlisé l'option `-print` deux fois plutôt qu'une, on y reviendra plus tard. 
+On envoit le résultat vers la sortie standard via le pipe `|` qui sera reprie par les prochaines commandes.
+Maintenant, avec l'information qui se trouve dans l'entrée standard, on va pouvoir modifier le nom du fichier qui est représenté ici par le 2e `-print` de la commande `find`.
+Avec la commande `sed`, on va remplacer ` ` par `_` via l'option de regexp `s/ /_/` mais seulement sur le deuxième nom de fichier, 
+grâce à `n` devant le regexp qui permet de sauter le premier nom de fichier qui fait référence au premier `-print` de la commande `find`. 
+On remplace pour chaque paire d'information sur le deuxième fichier et ce, jusqu'au dernier fichier avec l'option `g` à la fin du regexp. 
+Ensuite, on fera appel à la commande `xargs` qui permettra exécuter une commande avec les informations venu de l'entrée standard. 
+L'option `-r` évite de faire exécuter la commande `mv` si aucune paire de ligne n'est trouvée, en d'autres termes, 
+si aucun fichier contenant des espaces n'ayant été trouvé dans le dossier recherché. 
+La prochaine option `-d` avec `\n` permet de séparer les lignes par des sauts de lignes pour éviter de briser les noms de fichiers. 
+La dernière option `-n2` indique à la commande `xargs` d'envoyer deux lignes à la fois à la commande `mv` 
+qui va rpcéder au renommage du fichier et ce jusqu'à la dernière paire de lignes.
 
+```bash
+find ./windows -type f -iname "* *" -print -print | sed 'n;s/ /_/g' | xargs -r -d '\n' -n2 mv
+```
 
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 12

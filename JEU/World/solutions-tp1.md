@@ -79,7 +79,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 4
@@ -106,7 +106,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 5
@@ -117,8 +117,8 @@ la mission a été validée, ce qui a conclu cette mission.
 
 J'ai utilisé la commande `cat` pour faire afficher sur la sortie standard le message secret.
 Ensuite, j'ai envoyé la sortie vers l'entrée standard avec un pipe `|` vers la commande `tr`.
-Le chiffrement est circulaire, donc après la lettre `zZ` vient la lettre `aA` avec un décalage de 13 position dans les deux sens. Exemple, la lettre `p` devient la lettre `c`.
-
+Le chiffrement est circulaire, donc après la lettre `zZ` vient la lettre `aA` avec un décalage de 13 position dans les deux sens.
+Exemple, la lettre `p` devient la lettre `c`.
 
 ```bash
 cat secret | tr '[N-ZA-Mn-za-m]' '[A-Za-z]'
@@ -130,7 +130,10 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La question : `Quel est le message secret ?`
+La réponse à fournir : `pas de pierre, pas de construction. pas de construction, pas de palais. pas de palais... pas de palais.` 
+
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 6
@@ -148,6 +151,7 @@ Toujours avec l'option `-c` qui permet de compter le nombre d'octet dans la sort
 ```bash
 ./trop_long 2>&1 | wc -c
 ```
+Résultat trouvé : `1070`
 
 Ensuite, en entrant
 
@@ -155,7 +159,10 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La question : `Quel est le nombre de caractères affichés par le programme ?`
+La réponse à fournir : `1070` 
+
+En fournissant la réponses plus haut, la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 7
@@ -167,10 +174,10 @@ la mission a été validée, ce qui a conclu cette mission.
 La commande `dd` en utilisant l'option `if=` a été utilisé pour copier le contenu du fichier `urandom` du répertoire `/dev`.
 La sortie standard a été rediriger avec un pipe `|` vers l'entrée standard de la commande `head` qui est utilisée pour faire afficher le début d'un fichier.
 L'option `-c` est utilisé pour récupérer les X premiers octets. Ici, nous avons déterminé la valeur `8323072` pour les besoins de la cause.
-L'information a été redirigé vers le fichier `size_m` qui a été créé ou écraser s'il y existait déjà.
+L'information a été redirigé vers le fichier `size_me` qui a été créé ou écraser s'il y existait déjà.
 
 ```bash
-dd if=/dev/urandom | head -c 8323072 > size_m
+dd if=/dev/urandom | head -c 8323072 > size_me
 ```
 
 Ensuite, en entrant
@@ -179,7 +186,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 8
@@ -204,6 +211,7 @@ car sinon l'option `-c` avec le nombre de caractères à garder risque de corrom
 ```bash
 tail -c 3 mdp | head -q -c 57 mdp - | tail -c 5 | head -q -c 4 mdp -
 ```
+Résultat trouvé : `DirtyBit`
 
 Ensuite, en entrant
 
@@ -211,7 +219,10 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La question : `Quel est le mot de passe ?`
+La réponse à fournir : `DirtyBit` 
+
+En fournissant la réponses plus haut, la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 9
@@ -232,13 +243,18 @@ de sortir uniquement le nombre de lignes via la commande `wc` avec l'option qui 
 rev words | diff words "-" | grep '^<' | wc -l
 ```
 
+Résultat trouvé : `91`
+
 Ensuite, en entrant
 
 ```sh
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La question : `Quel est nombre de mots qui ne sont pas des palindromes ?`
+La réponse à fournir : `91` 
+
+En fournissant la réponses plus haut, la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 10
@@ -263,7 +279,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 11
@@ -297,7 +313,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 12
@@ -329,7 +345,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 13
@@ -342,6 +358,7 @@ On va utiliser encore une fois la commande `find` pour trouver tous les fichiers
 - archive/alpha/booth
 - archive/alpha/ritchie
 - archive/beta/knuth
+
 On utilise ensuite l'option `-samefile` qui fait référence au même inode que le fichier recherché. 
 Le résultat va retourner une liste que nous allons envoye rà la sortie standard. 
 La commande `wc` avec l'option `-l` va simplement compte rle nombre d elignes et ça va être le résultat recherché.
@@ -350,26 +367,36 @@ La commande `wc` avec l'option `-l` va simplement compte rle nombre d elignes et
 ```bash
 find archive/ -samefile archive/alpha/booth | wc -l
 ```
-Résultat escompté et trouvé : `278`
+Résultat trouvé : `278`
 
 #### Deuxième résultat du nombre 
 ```bash
 find archive/ -samefile archive/alpha/ritchie | wc -l
 ```
-Résultat escompté et trouvé : `1`
+Résultat trouvé : `1`
 
 #### Troisième résultat du nombre 
 ```bash
 find archive/ -samefile archive/beta/knuth | wc -l
 ```
-Résultat escompté et trouvé : `79`
+Résultat trouvé : `79`
 
 Ensuite, en entrant
 
 ```sh
 gash check
 ```
-On va répondre aux 3 questions, en fournissant les réponses plus haut.
+
+La question : `Quel est le nombre de fichiers identiques à archive/alpha/booth ?`
+La réponse à fournir : `278` 
+
+La question : `Quel est le nombre de fichiers identiques à archive/alpha/ritchie ?`
+La réponse à fournir : `1` 
+
+La question : `Quel est le nombre de fichiers identiques à archive/beta/knuth ?`
+La réponse à fournir : `79` 
+
+En fournissant les réponses plus haut, la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 14

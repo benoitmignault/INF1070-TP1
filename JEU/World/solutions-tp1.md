@@ -405,7 +405,44 @@ En fournissant les réponses plus haut, la mission a été validée, ce qui a co
 
 ### Démarche
 
-À compléter
+L'explication sera divisée en pour chaque question.
+
+Le début de la question commune : Dans le répertoire archive et tous ses sous-répertoires donnez le chemin...
+#### Première question :  du fichier avec la plus ancienne date de modification
+
+On utilise la commande `find`, à partir du répertoire `archive`, avec l'option `-type f` qui permet l'affichage de seulement des fichiers.
+Ensuite, l'option `-printf` avec l'option `%T+` permet d'avoir la date de la dernière modification, 
+l'option `%p\n` permet l'affichage du nom de fichier avec son chemin avec un retour à la ligne pour avoir chaque fichier, sur une ligne.
+
+```bash
+find archive -type f -printf '%T+ %p\n'
+```
+Résultat trouvé : `archive/beta/beastie/ash/gosling`, la réponse vient de l'énoncer du TP1 qui a connu un raté.
+
+#### Deuxième question :  du fichier turing avec la plus ancienne date de modification
+
+
+
+
+#### Troisième question :  du fichier knuth avec la plus récente date de modification
+
+
+
+
+
+#### Quatrième question :  le nombre total de fichiers avec une date de modification plus ancienne que le fichier archive/gamma/tux/knuth
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

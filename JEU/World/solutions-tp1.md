@@ -334,13 +334,42 @@ la mission a été validée, ce qui a conclu cette mission.
 
 ## Solution de la mission 13
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-À compléter
+On va utiliser encore une fois la commande `find` pour trouver tous les fichiers dont le numéro inode était le même pour les trois fichiers suivant :
+- archive/alpha/booth
+- archive/alpha/ritchie
+- archive/beta/knuth
+On utilise ensuite l'option `-samefile` qui fait référence au même inode que le fichier recherché. 
+Le résultat va retourner une liste que nous allons envoye rà la sortie standard. 
+La commande `wc` avec l'option `-l` va simplement compte rle nombre d elignes et ça va être le résultat recherché.
 
+#### Premier résultat du nombre 
+```bash
+find archive/ -samefile archive/alpha/booth | wc -l
+```
+Résultat escompté et trouvé : `278`
 
+#### Deuxième résultat du nombre 
+```bash
+find archive/ -samefile archive/alpha/ritchie | wc -l
+```
+Résultat escompté et trouvé : `1`
+
+#### Troisième résultat du nombre 
+```bash
+find archive/ -samefile archive/beta/knuth | wc -l
+```
+Résultat escompté et trouvé : `79`
+
+Ensuite, en entrant
+
+```sh
+gash check
+```
+On va répondre aux 3 questions, en fournissant les réponses plus haut.
 
 
 ## Solution de la mission 14

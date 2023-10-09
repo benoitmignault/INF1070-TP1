@@ -56,7 +56,7 @@ Ensuite, en entrant
 gash check
 ```
 
-la mission a été validée, ce qui a conclu cette mission.
+La mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 3
@@ -418,6 +418,9 @@ l'option `%p\n` permet l'affichage du nom de fichier avec son chemin avec un ret
 find archive -type f -printf '%T+ %p\n'
 ```
 Résultat trouvé : `archive/beta/beastie/ash/gosling`, la réponse vient de l'énoncer du TP1 qui a connu un raté.
+Pour arriver à cette réponse, vous devez faire un `sort -n` en dehors de la commande plus haut 
+(car restriction à une commande oblige) ou rajouter la commande via un pipe `|` préalablement.
+Mais la vraie réponse pour le fichier avec la date de modification la plus ancienne est plutôt : `archive/theta/gooey/ash/knuth` qui est plus vieux de 4 secondes.
 
 #### Deuxième question :  du fichier turing avec la plus ancienne date de modification
 

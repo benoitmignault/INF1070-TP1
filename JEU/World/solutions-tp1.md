@@ -367,19 +367,16 @@ La commande `wc` avec l'option `-l` va simplement compte rle nombre d elignes et
 ```bash
 find archive/ -samefile archive/alpha/booth | wc -l
 ```
-Résultat trouvé : `278`
 
 #### Deuxième résultat du nombre 
 ```bash
 find archive/ -samefile archive/alpha/ritchie | wc -l
 ```
-Résultat trouvé : `1`
 
 #### Troisième résultat du nombre 
 ```bash
 find archive/ -samefile archive/beta/knuth | wc -l
 ```
-Résultat trouvé : `79`
 
 Ensuite, en entrant
 
@@ -486,5 +483,23 @@ En fournissant les réponses plus haut, la mission a été validée, ce qui a co
 
 ### Démarche
 
-À compléter
+J'ai utilisé la commande `find` pour trouver les fichiers demandés dans le répertoire `data/`.
+J'ai utilisé l'option `-perm` avec le mode suivant `/u+rwx` ce qui demande à la commande de rechercher les fichiers pour lequel, 
+l'utilisateur (courant) possède des droits en lecture, écriture et exécution. 
+Cependant, il fallait avoir la négation du résultat, car la mission demandait le contraite, 
+soit les fichiers où utilisateur ne possède aucun droit. 
+Une fois que nous avons trouvé la liste des fichiers, on utilise l'action `-delete` pour supprimer ces fichiers.
 
+```bash
+find data/ ! -perm /u+rwx -delete
+```
+
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+La mission a été validée, ce qui a conclu cette mission.
+
+## Ça conclut aussi le TP1 !

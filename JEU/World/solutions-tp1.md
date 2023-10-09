@@ -401,13 +401,14 @@ En fournissant les réponses plus haut, la mission a été validée, ce qui a co
 
 ## Solution de la mission 14
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 
-L'explication sera divisée en pour chaque question.
+L'explication sera divisée en quatre section, une par question.
 
 Le début de la question commune : Dans le répertoire archive et tous ses sous-répertoires donnez le chemin...
+
 #### Première question :  du fichier avec la plus ancienne date de modification
 
 On utilise la commande `find`, à partir du répertoire `archive`, avec l'option `-type f` qui permet l'affichage de seulement des fichiers.
@@ -415,39 +416,68 @@ Ensuite, l'option `-printf` avec l'option `%T+` permet d'avoir la date de la der
 l'option `%p\n` permet l'affichage du nom de fichier avec son chemin avec un retour à la ligne pour avoir chaque fichier, sur une ligne.
 
 ```bash
-find archive -type f -printf '%T+ %p\n'
+find archive/ -type f -printf '%T+ %p\n'
 ```
-Résultat trouvé : `archive/beta/beastie/ash/gosling`, la réponse vient de l'énoncer du TP1 qui a connu un raté.
-Pour arriver à cette réponse, vous devez faire un `sort -n` en dehors de la commande plus haut 
+
+Pour arriver à la bonne réponse rapidement, vous devez faire un `sort -n -r` en dehors de la commande plus haut 
 (car restriction à une commande oblige) ou rajouter la commande via un pipe `|` préalablement.
 Mais la vraie réponse pour le fichier avec la date de modification la plus ancienne est plutôt : `archive/theta/gooey/ash/knuth` qui est plus vieux de 4 secondes.
 
 #### Deuxième question :  du fichier turing avec la plus ancienne date de modification
 
+Comme pour la première commande à la question 1, on va reprendre la même commande et les options.
+Sauf que nous allons rajouter une option `-iname` qui ignore les majuscules & minuscules avec le nom du fichier.
+On va passer le nom du fichier `turing` pour essayer de trouver toutes les occurances, de ce dernier dans les sous-répertoires du répertoire `archive`.
 
+```bash
+find archive/ -iname turing -type f -printf '%T+ %p\n'
+```
 
+Pour arriver à la bonne réponse rapidement, vous devez faire un `sort -n -r` en dehors de la commande plus haut avec les mêmes restrictions
+ou rajouter la commande via un pipe `|` préalablement.
 
 #### Troisième question :  du fichier knuth avec la plus récente date de modification
 
+On va reprendre littéralement la même commande qu'à la deuxième question, 
+sauf que la seule chose que nous allons changer, c'est le fichier, soit `knuth`.
 
+```bash
+find archive/ -iname knuth -type f -printf '%T+ %p\n'
+```
 
-
+Pour arriver à la bonne réponse rapidement, vous devez faire un `sort -n` en dehors de la commande plus haut avec les mêmes restrictions
+ou rajouter la commande via un pipe `|` préalablement, mais il n'est pas nécessaire d'ajouter l'option `-r` qui faisait un inversement du triage. 
 
 #### Quatrième question :  le nombre total de fichiers avec une date de modification plus ancienne que le fichier archive/gamma/tux/knuth
 
+On va utiliser la commande `find` pour trouver les fichiers qui sont plus ancien que le fichier cible soit `archive/gamma/tux/knuth`.
+On doit rechercher seulement les fichiers donc on utilise l'option `-type f`. 
+On va utiliser l'option `-newer` mais avec la négation `-not` pour avoir les fichiers plus anciens que le fichier cible.
+On envoi à la sortie standard, la liste des fichiers dans le pipe `|` pour ensuite utiliser la commande `wc` avec l'option `-l` pour compter le nombre de lignes.
 
+```bash
+find archive/ -type f -not -newer archive/gamma/tux/knuth | wc -l
+```
 
+Ensuite, en entrant
 
+```sh
+gash check
+```
 
+La question : `Quel est le fichier avec la plus ancienne date de modification ?`
+La réponse à fournir : `archive/beta/beastie/ash/gosling` 
 
+La question : `Quel est le fichier 'turing' avec la plus ancienne date de modification ?`
+La réponse à fournir : `archive/beta/duke/csh/turing` 
 
+La question : `Quel est le fichier 'knuth' avec la plus récente date de modification ?`
+La réponse à fournir : `archive/beta/beastie/ksh/knuth` 
 
+La question : `Quel est le nombre total de fichiers avec une date de modification plus ancienne que le fichier archive/gamma/tux/knuth ?`
+La réponse à fournir : `2968` 
 
-
-
-
-
-
+En fournissant les réponses plus haut, la mission a été validée, ce qui a conclu cette mission.
 
 
 ## Solution de la mission 15

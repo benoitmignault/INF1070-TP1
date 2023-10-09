@@ -479,7 +479,7 @@ En fournissant les réponses plus haut, la mission a été validée, ce qui a co
 
 ## Solution de la mission 15
 
-### État de la mission : résolue, partiellement résolue, non résolue
+### État de la mission : résolue
 
 ### Démarche
 

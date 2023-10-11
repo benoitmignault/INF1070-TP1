@@ -479,15 +479,15 @@ En fournissant les réponses plus haut, la mission a été validée, ce qui a co
 
 ### Démarche
 
-J'ai utilisé la commande `find` pour trouver les fichiers demandés dans le répertoire `data/`.
+J'ai utilisé la commande `find` avec l'option `-type f` qui permet de rester focus sur la recherche de fichier dans le répertoire et ses sous-répertoire `data/`.
 J'ai utilisé l'option `-perm` avec le mode suivant `/u+rwx` ce qui demande à la commande de rechercher les fichiers pour lequel, 
 l'utilisateur (courant) possède des droits en lecture, écriture et exécution. 
-Cependant, il fallait avoir la négation du résultat, car la mission demandait le contraire, 
+Cependant, il fallait avoir la négation du résultat, j'utilise `!` pour faire dire le contraire, car la mission demandait le contraire, 
 soit les fichiers où utilisateur ne possède aucun droit. 
 Une fois que j'ai trouvé la liste des fichiers, j'utilise l'action `-delete` pour supprimer ces fichiers.
 
 ```bash
-find data/ ! -perm /u+rwx -delete
+find data/ -type f ! -perm /u+rwx -delete
 ```
 
 Ensuite, en entrant

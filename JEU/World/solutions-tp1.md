@@ -350,7 +350,7 @@ La mission a été validée, ce qui a conclu cette mission.
 
 ### Démarche
 
-Je vais utiliser encore une fois la commande `find` pour trouver tous les fichiers dont le numéro inode était le même pour les trois fichiers suivants :
+Je vais utiliser encore une fois la commande `find` pour trouver tous les fichiers avec l'option `-type f` dont le numéro inode était le même pour les trois fichiers suivants :
 - archive/alpha/booth
 - archive/alpha/ritchie
 - archive/beta/knuth
@@ -361,17 +361,17 @@ La commande `wc` avec l'option `-l` va simplement compter le nombre de lignes et
 
 #### Premier résultat du nombre 
 ```bash
-find archive/ -samefile archive/alpha/booth | wc -l
+find archive/ -type f -samefile archive/alpha/booth | wc -l
 ```
 
 #### Deuxième résultat du nombre 
 ```bash
-find archive/ -samefile archive/alpha/ritchie | wc -l
+find archive/ -type f -samefile archive/alpha/ritchie | wc -l
 ```
 
 #### Troisième résultat du nombre 
 ```bash
-find archive/ -samefile archive/beta/knuth | wc -l
+find archive/ -type f -samefile archive/beta/knuth | wc -l
 ```
 
 Ensuite, en entrant

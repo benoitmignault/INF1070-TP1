@@ -418,16 +418,20 @@ Mais la vraie réponse pour le fichier avec la date de modification la plus anci
 
 #### Deuxième question :  du fichier turing avec la plus ancienne date de modification
 
-Comme pour la première commande à la question 1, je vais reprendre la même commande et les options.
-Sauf que je vais rajouter une option `-iname` qui ignore les majuscules & minuscules dans le nom du fichier.
-Je vais passer le nom du fichier `turing` pour essayer de trouver toutes les occurances, de ce dernier dans les sous-répertoires du répertoire `archive`.
+J'ai utilisé la commande `find` pour trouver la liste des fichiers qui avait le même nom que le fichier recherché.
+J'ai utilisé l'option `-iname` avec le nom `turing` pour trouver les fichiers identiques uniquement du nom de fichier.
+J'ai utilisé l'option `-type f` pour trouver seulement les fichiers normaux.
+J'ai utilisé l'action `-exec` qui permet d'exécuter une commande à l'intérieur de la commande `find` avec la commande `ls`
+qui permet d'afficher la liste des fichiers trouvés et leurs informations. 
+J'ai utilisé l'option `-t` pour faire un triage à même la commande et le triage se fait décroissant, naturellement.
+La dernière ligne affichée sera le fichier dont la modification est la plus vieille.
+Pour que l'option `-t` soit correctement bien interprèter, j'ai utilisé l'option `-l` pour l'affichage d'information relier pour chaque fichier.
+J'ai utilisé l'option `--time-style` avec le format `full-iso` qui correcpond à `ISO 8601` qui est une norme d'affichage standardisée.
+Cette manière d'afficher la date, me permet de bien identifier le fichier.
 
 ```bash
-find archive/ -iname turing -type f -printf '%T+ %p\n'
+find archive/ -iname turing -type f -exec ls -lt --time-style=full-iso {} +
 ```
-
-Pour arriver à la bonne réponse rapidement, je dois faire un `sort -n -r` en dehors de la commande plus haut avec les mêmes restrictions
-ou rajouter la commande via un pipe `|` préalablement.
 
 #### Troisième question :  du fichier knuth avec la plus récente date de modification
 
@@ -435,7 +439,7 @@ Je vais reprendre littéralement la même commande qu'à la deuxième question,
 sauf que la seule chose que je vais changer, c'est le fichier, soit `knuth`.
 
 ```bash
-find archive/ -iname knuth -type f -printf '%T+ %p\n'
+find archive/ -iname knuth -type f -exec ls -ltr --time-style=full-iso {} +
 ```
 
 Pour arriver à la bonne réponse rapidement, je dois faire un `sort -n` en dehors de la commande plus haut avec les mêmes restrictions

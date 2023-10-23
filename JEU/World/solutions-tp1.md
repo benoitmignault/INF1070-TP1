@@ -419,15 +419,15 @@ Mais la vraie réponse pour le fichier avec la date de modification la plus anci
 #### Deuxième question :  du fichier turing avec la plus ancienne date de modification
 
 J'ai utilisé la commande `find` pour trouver la liste des fichiers qui avait le même nom que le fichier recherché.
-J'ai utilisé l'option `-iname` avec le nom `turing` pour trouver les fichiers identiques uniquement du nom de fichier.
+J'ai utilisé l'option `-iname` avec le nom `turing` pour trouver les fichiers identiques uniquement via le nom de fichier.
 J'ai utilisé l'option `-type f` pour trouver seulement les fichiers normaux.
-J'ai utilisé l'action `-exec` qui permet d'exécuter une commande à l'intérieur de la commande `find` avec la commande `ls`
+J'ai utilisé l'action `-exec` qui permet d'exécuter une commande ou plusieurs à l'intérieur de la commande `find` avec la commande `ls`
 qui permet d'afficher la liste des fichiers trouvés et leurs informations. 
-J'ai utilisé l'option `-t` pour faire un triage à même la commande et le triage se fait décroissant, naturellement.
+J'ai utilisé l'option `-t` pour faire un triage par commencer par les fichiers les plus récents et pour finir par les fichiers les plus anciens.
 La dernière ligne affichée sera le fichier dont la modification est la plus vieille.
 Pour que l'option `-t` soit correctement bien interprèter, j'ai utilisé l'option `-l` pour l'affichage d'information relier pour chaque fichier.
 J'ai utilisé l'option `--time-style` avec le format `full-iso` qui correcpond à `ISO 8601` qui est une norme d'affichage standardisée.
-Cette manière d'afficher la date, me permet de bien identifier le fichier.
+Cette manière d'afficher la date, me permet de bien identifier le fichier. Les symboles `{}` permet l'affichage, de chaque fichier. Pour finir, l'option `+`, permet de faire le traitement d'un groupe de fichier avec la commande exécuter par `-exec`, au lieu de faire la commande dans le `-exec` pour chaque fichier trouvé.
 
 ```bash
 find archive/ -iname turing -type f -exec ls -lt --time-style=full-iso {} +
@@ -435,15 +435,12 @@ find archive/ -iname turing -type f -exec ls -lt --time-style=full-iso {} +
 
 #### Troisième question :  du fichier knuth avec la plus récente date de modification
 
-Je vais reprendre littéralement la même commande qu'à la deuxième question, 
-sauf que la seule chose que je vais changer, c'est le fichier, soit `knuth`.
+Je vais reprendre le principe de la question 2, mais je vais rajouter l'option `-r` qui va changer l'ordre de triage pour commencer par les fichiers les plus anciens, 
+pour finir par les fichiers les plus récents. J'ai bien sûr changer le nom du fichier recherché par `knuth`.
 
 ```bash
 find archive/ -iname knuth -type f -exec ls -ltr --time-style=full-iso {} +
 ```
-
-Pour arriver à la bonne réponse rapidement, je dois faire un `sort -n` en dehors de la commande plus haut avec les mêmes restrictions
-ou rajouter la commande via un pipe `|` préalablement, mais il n'est pas nécessaire d'ajouter l'option `-r` qui faisait un inversement du triage. 
 
 #### Quatrième question :  le nombre total de fichiers avec une date de modification plus ancienne que le fichier archive/gamma/tux/knuth
 

@@ -412,9 +412,9 @@ l'option `%p\n` permet l'affichage du nom de fichier avec son chemin avec un ret
 find archive/ -type f -printf '%T+ %p\n'
 ```
 
-Pour arriver à la bonne réponse rapidement, je dois faire un `sort -n -r` en dehors de la commande plus haut 
+Pour arriver à la bonne réponse rapidement, je dois faire un `sort -r` en dehors de la commande plus haut 
 (car restriction à une commande oblige) ou rajouter la commande via un pipe `|` préalablement.
-Mais la vraie réponse pour le fichier avec la date de modification la plus ancienne est plutôt : `archive/theta/gooey/ash/knuth` qui est plus vieux de 4 millièmes de secondes.
+Mais la vraie réponse pour le fichier avec la date de modification la plus ancienne est plutôt : `archive/theta/gooey/ash/knuth` qui est plus vieux de 4 secondes.
 
 #### Deuxième question :  du fichier turing avec la plus ancienne date de modification
 
